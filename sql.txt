@@ -1,0 +1,53 @@
+CREATE TABLE `t_growth_data` (
+        `code` varchar(32) DEFAULT NULL,
+        `mbrg` float DEFAULT NULL,
+        `nprg` float DEFAULT NULL,
+        `nav` float DEFAULT NULL,
+        `targ` float DEFAULT NULL,
+        `epsg` float DEFAULT NULL,
+        `seg` float DEFAULT NULL,
+        `timestamp` varchar(32) DEFAULT NULL,
+        UNIQUE KEY `code` (`code`,`timestamp`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+    CREATE TABLE `t_profit_data` (
+            `code` varchar(32) NOT NULL DEFAULT '',
+            `roe` float DEFAULT NULL,
+            `net_profit_ratio` float DEFAULT NULL,
+            `gross_profit_rate` float DEFAULT NULL,
+            `net_profits` float DEFAULT NULL,
+            `eps` float DEFAULT NULL,
+            `business_income` float DEFAULT NULL,
+            `bips` float DEFAULT NULL,
+            `timestamp` varchar(32) DEFAULT NULL,
+            PRIMARY KEY (`code`),
+            UNIQUE KEY `code` (`code`,`timestamp`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+    CREATE TABLE `t_stock_code` (
+            `code` varchar(32) CHARACTER SET latin1 NOT NULL DEFAULT '',
+            `name` varchar(64) DEFAULT NULL,
+            `industry` varchar(64) DEFAULT NULL,
+            `area` varchar(64) DEFAULT NULL,
+            `pe` float DEFAULT NULL,
+            `outstanding` float DEFAULT NULL,
+            `totals` float DEFAULT NULL,
+            `totalAssets` float DEFAULT NULL,
+            `liquidAssets` float DEFAULT NULL,
+            `fixedAssets` float DEFAULT NULL,
+            `reserved` float DEFAULT NULL,
+            `reservedPerShare` float DEFAULT NULL,
+            `esp` float DEFAULT NULL,
+            `bvps` float DEFAULT NULL,
+            `pb` float DEFAULT NULL,
+            `timeToMarket` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            `undp` float DEFAULT NULL,
+            `perundp` float DEFAULT NULL,
+            `rev` float DEFAULT NULL,
+            `profit` float DEFAULT NULL,
+            `gpr` float DEFAULT NULL,
+            `npr` float DEFAULT NULL,
+            `holders` int(11) DEFAULT NULL,
+            PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
