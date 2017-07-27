@@ -51,3 +51,16 @@ CREATE TABLE `t_growth_data` (
             `holders` int(11) DEFAULT NULL,
             PRIMARY KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+
+    CREATE TABLE `t_cashflow_data` (
+            `code` varchar(20) DEFAULT NULL,
+            `cf_sales` float DEFAULT NULL,
+            `rateofreturn` float DEFAULT NULL,
+            `cf_nm` float DEFAULT NULL,
+            `cf_liabilities` float DEFAULT NULL,
+            `cashflowratio` float DEFAULT NULL,
+            `timestamp` varchar(20) DEFAULT NULL,
+            UNIQUE KEY `code` (`code`,`timestamp`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8
